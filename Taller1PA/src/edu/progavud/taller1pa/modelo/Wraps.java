@@ -8,6 +8,6 @@ package edu.progavud.taller1pa.modelo;
  *
  * @author sangr
  */
-public class Wraps {
+public class Wraps extends Producto {
     
 }

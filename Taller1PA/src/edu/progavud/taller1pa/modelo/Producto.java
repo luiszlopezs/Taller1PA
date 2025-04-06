@@ -7,15 +7,13 @@ public class Producto {
     private int cantidad;
     private String nombre;
     private String descripcion;
-    private String categoría; // Alternativas del cliente para ordenar (hamburguesa,bucket,wraps,alitas...)
     private int valorPuntos; //valor en puntos que otorga, de acuerdo a su precio
 
-    public Producto(int precio, int cantidad, String nombre, String descripcion, String categoría, int valorPuntos) {
+    public Producto(int precio, int cantidad, String nombre, String descripcion, int valorPuntos) {
         this.precio = precio;
         this.cantidad = cantidad;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.categoría = categoría;
         this.valorPuntos = valorPuntos;
     }
 
@@ -61,16 +59,4 @@ public class Producto {
     public void setValorPuntos(int valorPuntos) {
         this.valorPuntos = valorPuntos;
     }
-
-    public String getCategoría() {
-        return categoría;
-    }
-
-    public void setCategoría(String categoría) {
-        this.categoría = categoría;
-    }
-    
-    
-    
-    
 }
