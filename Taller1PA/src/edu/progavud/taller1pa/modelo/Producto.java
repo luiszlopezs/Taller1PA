@@ -9,6 +9,7 @@ public class Producto {
     private String descripcion;
     private String categoría; // Alternativas del cliente para ordenar (hamburguesa,bucket,wraps,alitas...)
     private int valorPuntos; //valor en puntos que otorga, de acuerdo a su precio
+    private String tamaño;
 
     public Producto(int precio, int cantidad, String nombre, String descripcion, String categoría, int valorPuntos) {
         this.precio = precio;
@@ -68,6 +69,14 @@ public class Producto {
 
     public void setCategoría(String categoría) {
         this.categoría = categoría;
+    }
+
+    public String getTamaño() {
+        return tamaño;
+    }
+
+    public void setTamaño(String tamaño) {
+        this.tamaño = tamaño;
     }
     
     
