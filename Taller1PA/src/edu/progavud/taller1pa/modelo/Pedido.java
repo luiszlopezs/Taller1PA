@@ -1,17 +1,18 @@
 
 package edu.progavud.taller1pa.modelo;
+import java.util.ArrayList;
 
 public class Pedido {
     private int precio;
-    private int cantidad;
     private String nombre;
+    private ArrayList<Producto> productos;
 
-    public Pedido(int precio, int cantidad, String nombre) {
+    public Pedido(int precio, String nombre, ArrayList<Producto> productos) {
         this.precio = precio;
-        this.cantidad = cantidad;
         this.nombre = nombre;
+        this.productos = productos;
     }
-
+   
     public Pedido() {
     }
 
@@ -23,14 +24,14 @@ public class Pedido {
         this.precio = precio;
     }
 
-    public int getCantidad() {
-        return cantidad;
+    public ArrayList<Producto> getProductos() {
+        return productos;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public void setProductos(ArrayList<Producto> productos) {
+        this.productos = productos;
     }
-
+    
     public String getNombre() {
         return nombre;
     }
