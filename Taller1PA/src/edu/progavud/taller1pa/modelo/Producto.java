@@ -2,13 +2,13 @@
 package edu.progavud.taller1pa.modelo;
 
 public class Producto {
-    private int precio;
-    private int cantidad;
+    private int Precio;
+    private int Cantidad;
     private String nombre;
 
-    public Producto(int precio, int cantidad, String nombre) {
-        this.precio = precio;
-        this.cantidad = cantidad;
+    public Producto(int Precio, int Cantidad, String nombre) {
+        this.Precio = Precio;
+        this.Cantidad = Cantidad;
         this.nombre = nombre;
     }
 
@@ -16,19 +16,19 @@ public class Producto {
     }
 
     public int getPrecio() {
-        return precio;
+        return Precio;
     }
 
-    public void setPrecio(int precio) {
-        this.precio = precio;
+    public void setPrecio(int Precio) {
+        this.Precio = Precio;
     }
 
     public int getCantidad() {
-        return cantidad;
+        return Cantidad;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public void setCantidad(int Cantidad) {
+        this.Cantidad = Cantidad;
     }
 
     public String getNombre() {
@@ -38,5 +38,6 @@ public class Producto {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    
     
 }
