@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package edu.progavud.taller1pa.control;
+package edu.progavud.taller1pa.modelo;
 
 /**
  *
  * @author sangr
  */
-public class ControlPago {
+public class Pago {
     
     private String medioDePago;
     private boolean estaPago;
