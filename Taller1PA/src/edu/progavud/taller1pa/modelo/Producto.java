@@ -3,17 +3,16 @@ package edu.progavud.taller1pa.modelo;
 
 public class Producto {
     
-    private int precio;
-    private int cantidad;
-    private String nombre;
-    private String descripcion;
-    private String categoría; // Alternativas del cliente para ordenar (hamburguesa,bucket,wraps,alitas...)
-    private int valorPuntos; //valor en puntos que otorga, de acuerdo a su precio
-    private String tamaño;
+    protected double precio;
+    protected String nombre;
+    protected String descripcion;
+    protected int cantidad;
+    protected String categoría; // Alternativas del cliente para ordenar (hamburguesa,bucket,wraps,alitas...)
+    protected int valorPuntos; //valor en puntos que otorga, de acuerdo a su precio
 
-    public Producto(int precio, int cantidad, String nombre, String descripcion, String categoría, int valorPuntos) {
+
+    public Producto(double precio, int cantidad, String nombre, String descripcion, String categoría, int valorPuntos) {
         this.precio = precio;
-        this.cantidad = cantidad;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.categoría = categoría;
@@ -23,7 +22,7 @@ public class Producto {
     public Producto() {
     }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
@@ -71,13 +70,9 @@ public class Producto {
         this.categoría = categoría;
     }
 
-    public String getTamaño() {
-        return tamaño;
-    }
 
-    public void setTamaño(String tamaño) {
-        this.tamaño = tamaño;
-    }
+
+
     
     
     
