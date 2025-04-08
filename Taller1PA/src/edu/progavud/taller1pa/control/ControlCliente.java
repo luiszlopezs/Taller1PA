@@ -4,10 +4,6 @@
  */
 package edu.progavud.taller1pa.control;
 
-/**
- *
- * @author sangr
- */
 public class ControlCliente {
     
 }
