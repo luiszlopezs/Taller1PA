@@ -6,7 +6,7 @@ package edu.progavud.taller1pa.modelo;
 
 /**
  *
- * @author hailen
+ * @author sangr
  */
 public class Pago {
     

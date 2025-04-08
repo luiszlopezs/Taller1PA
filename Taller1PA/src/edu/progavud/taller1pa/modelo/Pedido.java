@@ -1,26 +1,37 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package edu.progavud.taller1pa.modelo;
+
 import java.util.ArrayList;
 
+/**
+ *
+ * @author hailen
+ */
 public class Pedido {
+    
     private String nombre;
-    private String tipoPedido; //Para llevar o para la mesa
+    private String tipoPedido;
     private ArrayList<Producto> productos;
     private int sumaPuntos;
 
-    public Pedido(String nombre, String tipoPedido, ArrayList<Producto> productos) {
+    public Pedido(String nombre, String tipoPedido, ArrayList<Producto> productos, int sumaPuntos) {
         this.nombre = nombre;
         this.tipoPedido = tipoPedido;
         this.productos = productos;
+        this.sumaPuntos = sumaPuntos;
     }
-   
+
     public Pedido() {
     }
     
-    public double calcularPrecioTotal(){ //Método que calcula el precio de pedido, accediendo al precio de cada producto y multiplicándolo por la cantidad
+    public double calcularPrecioTotal(){
         double precioTotal = 0;
         for(Producto prod: this.productos){
-            precioTotal += (prod.getPrecio()* prod.getCantidad());
+            precioTotal += (prod.getPrecio()*prod.getCantidad());
+            
         }
         return precioTotal;
     }
@@ -37,14 +48,6 @@ public class Pedido {
         productos.add(producto);
     }
 
-    public ArrayList<Producto> getProductos() {
-        return productos;
-    }
-
-    public void setProductos(ArrayList<Producto> productos) {
-        this.productos = productos;
-    }
-    
     public String getNombre() {
         return nombre;
     }
@@ -61,6 +64,16 @@ public class Pedido {
         this.tipoPedido = tipoPedido;
     }
 
+
+    public ArrayList<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(ArrayList<Producto> productos) {
+        this.productos = productos;
+    }
+
+
     public int getSumaPuntos() {
         return sumaPuntos;
     }
@@ -71,6 +84,4 @@ public class Pedido {
 
     
     
-    
- 
 }
