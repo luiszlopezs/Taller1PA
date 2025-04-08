@@ -64,6 +64,7 @@ public class Pedido {
         this.tipoPedido = tipoPedido;
     }
 
+
     public ArrayList<Producto> getProductos() {
         return productos;
     }
@@ -72,6 +73,7 @@ public class Pedido {
         this.productos = productos;
     }
 
+
     public int getSumaPuntos() {
         return sumaPuntos;
     }
@@ -79,6 +81,7 @@ public class Pedido {
     public void setSumaPuntos(int sumaPuntos) {
         this.sumaPuntos = sumaPuntos;
     }
+
     
     
 }
