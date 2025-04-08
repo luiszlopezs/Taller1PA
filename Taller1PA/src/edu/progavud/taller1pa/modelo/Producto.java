@@ -1,25 +1,32 @@
 
 package edu.progavud.taller1pa.modelo;
 
+import java.util.List;
+
 public class Producto {
     
     protected double precio;
     protected String nombre;
     protected String descripcion;
     protected int cantidad;
-    protected String categoría; // Alternativas del cliente para ordenar (hamburguesa,bucket,wraps,alitas...)
+    protected String categoria; // Alternativas del cliente para ordenar (hamburguesa,bucket,wraps,alitas...)
     protected int valorPuntos; //valor en puntos que otorga, de acuerdo a su precio
 
 
-    public Producto(double precio, int cantidad, String nombre, String descripcion, String categoría, int valorPuntos) {
+    public Producto(double precio, int cantidad, String nombre, String descripcion, String categoria, int valorPuntos) {
         this.precio = precio;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.categoría = categoría;
+        this.categoria = categoria;
         this.valorPuntos = valorPuntos;
     }
 
     public Producto() {
+    }
+    
+    
+    public boolean esDeLaCategoria(String categoria) {
+        return this.categoria.equalsIgnoreCase(categoria);
     }
 
     public double getPrecio() {
@@ -63,11 +70,11 @@ public class Producto {
     }
 
     public String getCategoría() {
-        return categoría;
+        return categoria;
     }
 
     public void setCategoría(String categoría) {
-        this.categoría = categoría;
+        this.categoria = categoría;
     }
 
 
