@@ -61,6 +61,14 @@ public class Pedido {
         this.tipoPedido = tipoPedido;
     }
 
+    public int getSumaPuntos() {
+        return sumaPuntos;
+    }
+
+    public void setSumaPuntos(int sumaPuntos) {
+        this.sumaPuntos = sumaPuntos;
+    }
+
     
     
     
