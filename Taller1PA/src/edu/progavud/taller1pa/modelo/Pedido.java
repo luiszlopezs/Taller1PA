@@ -25,12 +25,16 @@ public class Pedido {
         return precioTotal;
     }
     
-    public int sumarPuntos(){
+    public int sumarPuntos(){ // recorre la lista de productos y suma los puntos acumulados
         sumaPuntos = 0;
         for (Producto producto : productos) {
             sumaPuntos += producto.getValorPuntos();
         }
         return sumaPuntos;
+    }
+    
+    public void anadirProducto(Producto producto){ // Metodo para añadir productos al pedido
+        productos.add(producto);
     }
 
     public ArrayList<Producto> getProductos() {
