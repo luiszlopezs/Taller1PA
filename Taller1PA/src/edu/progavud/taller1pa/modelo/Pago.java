@@ -8,18 +8,14 @@ package edu.progavud.taller1pa.modelo;
  *
  * @author sangr
  */
-public class Pago {
+public abstract class Pago {
     
-    private String medioDePago;
-    private boolean estaPago;
-    private double precioConDto;
-    private Pedido p;
-    private Cliente c;
-    
-    private int numTarjeta;
-    private int claveTarjeta;
-    
-    private int cedula;
+    protected String medioDePago;
+    protected boolean estaPago;
+    protected double precioConDto;
+    protected Pedido p;
+    protected Cliente c;
+    protected int cedula;
 
     public Pago(String medioDePago, boolean estaPago, Pedido p, Cliente c, int cedula) {
         this.medioDePago = medioDePago;
@@ -29,7 +25,10 @@ public class Pago {
         this.cedula = cedula;
     }
 
+    public Pago() {
+    }
 
+    
     
     
     public double aplicarDescuentoIndigena(){
@@ -53,28 +52,15 @@ public class Pago {
         return precioConDto;
         
     }
-    //metodo para pagar con el datafono
-    public boolean pedidoPagoDatafono(int numTarjeta, int claveTarjeta){
-        estaPago = true;
-        return estaPago;
-    }
     
     public void asignarPuntos(int cedula){
         c.setPuntos(p.calcularPuntos());
     }
-    // metodo para pagar con puntos, resta los puntos avtuales de la persona con los del pedido
-    public boolean pagarPedidoConPuntos(double puntos){
-        double puntosActualizados = c.getPuntos() - p.calcularPuntos();
-        c.setPuntos(puntosActualizados);
-        estaPago = true;
-        return estaPago;
-    }
-    
-    public void pagarEnCaja(int precio){
-        p.getProductos();
-        p.calcularPrecioTotal();
         
-    }
+    //metodo para pagar, se hereda a las clase pago
+    public abstract void pedidoPago();
+    
+    
     
     
 }
