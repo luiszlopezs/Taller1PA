@@ -11,15 +11,14 @@ package edu.progavud.taller1pa.modelo;
 public abstract class Pago {
     
     protected String medioDePago;
-    protected boolean estaPago;
+    protected boolean estaPago = false;
     protected double precioConDto;
     protected Pedido p;
     protected Cliente c;
     protected int cedula;
 
-    public Pago(String medioDePago, boolean estaPago, Pedido p, Cliente c, int cedula) {
+    public Pago(String medioDePago, Pedido p, Cliente c, int cedula) {
         this.medioDePago = medioDePago;
-        this.estaPago = estaPago;
         this.p = p;
         this.c = c;
         this.cedula = cedula;
