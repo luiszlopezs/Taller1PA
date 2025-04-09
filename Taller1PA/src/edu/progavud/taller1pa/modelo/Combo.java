@@ -12,8 +12,8 @@ public class Combo extends Producto{
     private boolean esAgrandado;
     private boolean tieneExtras;
 
-    public Combo(int precio, int cantidad, String nombre, String descripcion, String categoría, int valorPuntos) {
-        super(precio, cantidad, nombre, descripcion, categoría, valorPuntos);
+    public Combo(int precio, int cantidad, String nombre, String descripcion, TipoProducto tipo, int valorPuntos) {
+        super(precio, cantidad, nombre, descripcion, tipo, valorPuntos);
     }
 
     public Combo() {

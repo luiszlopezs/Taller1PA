@@ -6,12 +6,12 @@ package edu.progavud.taller1pa.modelo;
  * @author hailen
  */
 public class Cliente {
-    private int puntos;
+    private double puntos;
     private int cedula;
     private boolean esMayorDeEdad;
     private boolean esIndigena;
 
-    public Cliente(int puntos, int cedula, boolean esMayorDeEdad, boolean esIndigena) {
+    public Cliente(double puntos, int cedula, boolean esMayorDeEdad, boolean esIndigena) {
         this.puntos = puntos;
         this.cedula = cedula;
         this.esMayorDeEdad = esMayorDeEdad;
@@ -21,11 +21,11 @@ public class Cliente {
     public Cliente() {
     }
 
-    public int getPuntos() {
+    public double getPuntos() {
         return puntos;
     }
 
-    public void setPuntos(int puntos) {
+    public void setPuntos(double puntos) {
         this.puntos = puntos;
     }
 

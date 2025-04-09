@@ -60,11 +60,11 @@ public class Pago {
     }
     
     public void asignarPuntos(int cedula){
-        c.setPuntos(p.sumarPuntos());
+        c.setPuntos(p.calcularPuntos());
     }
     // metodo para pagar con puntos, resta los puntos avtuales de la persona con los del pedido
-    public boolean pagarPedidoConPuntos(int puntos){
-        int puntosActualizados = c.getPuntos() - p.sumarPuntos();
+    public boolean pagarPedidoConPuntos(double puntos){
+        double puntosActualizados = c.getPuntos() - p.calcularPuntos();
         c.setPuntos(puntosActualizados);
         estaPago = true;
         return estaPago;
