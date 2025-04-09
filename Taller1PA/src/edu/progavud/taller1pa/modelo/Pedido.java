@@ -12,13 +12,12 @@ import java.util.ArrayList;
  */
 public class Pedido {
     
-    private String nombre;
     private String tipoPedido;
     private ArrayList<Producto> productos;
-    private int sumaPuntos;
+    private double sumaPuntos;
 
-    public Pedido(String nombre, String tipoPedido, ArrayList<Producto> productos, int sumaPuntos) {
-        this.nombre = nombre;
+    public Pedido( String tipoPedido, ArrayList<Producto> productos, int sumaPuntos) {
+
         this.tipoPedido = tipoPedido;
         this.productos = productos;
         this.sumaPuntos = sumaPuntos;
@@ -36,7 +35,7 @@ public class Pedido {
         return precioTotal;
     }
     
-    public int sumarPuntos(){ // recorre la lista de productos y suma los puntos acumulados
+    public double calcularPuntos(){ // recorre la lista de productos y suma los puntos acumulados
         sumaPuntos = 0;
         for (Producto producto : productos) {
             sumaPuntos += producto.getValorPuntos();
@@ -46,14 +45,6 @@ public class Pedido {
     
     public void anadirProducto(Producto producto){ // Metodo para añadir productos al pedido
         productos.add(producto);
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public String getTipoPedido() {
@@ -74,7 +65,7 @@ public class Pedido {
     }
 
 
-    public int getSumaPuntos() {
+    public double getSumaPuntos() {
         return sumaPuntos;
     }
 

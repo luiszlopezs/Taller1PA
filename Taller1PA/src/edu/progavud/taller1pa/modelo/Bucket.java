@@ -7,8 +7,8 @@ public class Bucket extends Producto {
     
     private ArrayList<Producto> piezas;
 
-    public Bucket(int precio, int cantidad, String nombre, String descripcion, String categoría, int valorPuntos) {
-        super(precio, cantidad, nombre, descripcion, categoría, valorPuntos);
+    public Bucket(int precio, int cantidad, String nombre, String descripcion, TipoProducto tipo, int valorPuntos) {
+        super(precio, cantidad, nombre, descripcion, tipo, valorPuntos);
     }
 
     public Bucket() {
