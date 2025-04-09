@@ -12,17 +12,10 @@ public class PagoConPuntos extends Pago{
     
     
     @Override
-    public void pedidoPago(){
-         //es para sobreescribir el metodo abstracto
-    }
-    
-    
-    // metodo para pagar con puntos, resta los puntos avtuales de la persona con los del pedido
-    public boolean pedidoPago(double puntos){
+    public void pedidoPago(){  //actualizacion pedido pago
         double puntosActualizados = c.getPuntos() - p.calcularPuntos();
         c.setPuntos(puntosActualizados);
         estaPago = true;
-        return estaPago;
     }
     
 }
