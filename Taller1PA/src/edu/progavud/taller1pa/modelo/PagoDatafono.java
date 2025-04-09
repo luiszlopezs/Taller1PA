@@ -15,13 +15,7 @@ public class PagoDatafono extends Pago {
     
     @Override
     public void pedidoPago(){
-        //es para sobreescribir el metodo abstracto
-    }
-    
-    //metodo para pagar con el datafono
-    public boolean pedidoPago(int numTarjeta, int claveTarjeta){
         estaPago = true;
-        return estaPago;
     }
     
     
