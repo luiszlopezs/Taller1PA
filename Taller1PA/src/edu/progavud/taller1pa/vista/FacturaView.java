@@ -61,7 +61,7 @@ public class FacturaView extends JFrame {
         lblTotal = new JLabel("Total pagado: $" + total);
         lblTotal.setFont(new Font("Arial", Font.BOLD, 16));
 
-        // Turno generado (simulado con UUID acortado)
+        // Turno generado
         String turno = UUID.randomUUID().toString().substring(0, 6).toUpperCase();
         lblTurno = new JLabel("Turno asignado: " + turno);
         lblTurno.setFont(new Font("Arial", Font.BOLD, 18));
@@ -83,17 +83,5 @@ public class FacturaView extends JFrame {
 
     public void addVolverInicioListener(ActionListener listener) {
         btnVolverInicio.addActionListener(listener);
-    }
-
-    public static void main(String[] args) {
-        List<Producto> productos = List.of(
-            new Producto(15000, 2, "Hamburguesa Clásica", "Carne 100% res", "Hamburguesas", 15),
-            new Producto(12000, 1, "Wrap de Pollo", "Pollo crocante", "Wraps", 12)
-        );
-
-        SwingUtilities.invokeLater(() -> {
-            FacturaView vista = new FacturaView(productos);
-            vista.setVisible(true);
-        });
     }
 }

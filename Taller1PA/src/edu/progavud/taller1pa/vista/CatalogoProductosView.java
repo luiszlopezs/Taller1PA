@@ -76,21 +76,4 @@ public class CatalogoProductosView extends JFrame {
             botonesAgregar.get(producto).addActionListener(listener);
         }
     }
-
-    public static void main(String[] args) {
-        List<Producto> productos = new ArrayList<>();
-
-        Producto p1 = new Producto(15000, 1, "Hamburguesa Clásica", "Carne 100% res con queso y lechuga", "Hamburguesas", 15);
-        Producto p2 = new Producto(12000, 1, "Wrap de Pollo", "Pollo crocante con aderezo ranch", "Wraps", 12);
-        Producto p3 = new Producto(20000, 1, "Bucket 5 piezas", "3 alitas, 2 piernas", "Buckets", 20);
-
-        productos.add(p1);
-        productos.add(p2);
-        productos.add(p3);
-
-        SwingUtilities.invokeLater(() -> {
-            CatalogoProductosView vista = new CatalogoProductosView(productos);
-            vista.setVisible(true);
-        });
-    }
 }
