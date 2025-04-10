@@ -53,7 +53,7 @@ public abstract class Pago {
     }
     
     public void asignarPuntos(int cedula){
-        c.setPuntos(p.calcularPuntos());
+        c.setPuntos(p.calcularPuntosTotales());
     }
         
     //metodo para pagar, se hereda a las clase pago

@@ -13,7 +13,7 @@ public class PagoConPuntos extends Pago{
     
     @Override
     public void pedidoPago(){  //actualizacion pedido pago
-        double puntosActualizados = c.getPuntos() - p.calcularPuntos();
+        double puntosActualizados = c.getPuntos() - p.calcularPuntosTotales();
         c.setPuntos(puntosActualizados);
         estaPago = true;
     }
