@@ -50,11 +50,4 @@ public class CategoriaView extends JFrame {
             botonesCategoria.get(categoria).addActionListener(listener);
         }
     }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            CategoriaView vista = new CategoriaView();
-            vista.setVisible(true);
-        });
-    }
 }

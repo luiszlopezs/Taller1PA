@@ -68,11 +68,4 @@ public class CedulaView extends JFrame {
     public void addPagarConPuntosListener(ActionListener listener) {
         btnPagarConPuntos.addActionListener(listener);
     }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            CedulaView vista = new CedulaView();
-            vista.setVisible(true);
-        });
-    }
 }
