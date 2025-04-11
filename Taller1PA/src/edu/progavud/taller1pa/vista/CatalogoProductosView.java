@@ -51,8 +51,12 @@ public class CatalogoProductosView extends JFrame {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(BorderFactory.createTitledBorder(producto.getNombre()));
 
-        JLabel imagen = new JLabel("[Imagen]", JLabel.CENTER);
-        imagen.setPreferredSize(new Dimension(150, 100));
+        // Ruta dinámica para la imagen
+        String rutaImagen = "imagenes/" + obtenerNombreImagen(producto.getNombre());
+        ImageIcon icono = new ImageIcon(rutaImagen);
+        Image imagenEscalada = icono.getImage().getScaledInstance(150, 100, Image.SCALE_SMOOTH);
+        JLabel imagenLabel = new JLabel(new ImageIcon(imagenEscalada), JLabel.CENTER);
+        imagenLabel.setPreferredSize(new Dimension(150, 100));
 
         JTextArea descripcion = new JTextArea(producto.getDescripcion() + "\nPuntos: " + producto.getValorPuntos());
         descripcion.setWrapStyleWord(true);
@@ -64,11 +68,50 @@ public class CatalogoProductosView extends JFrame {
         JButton btnAgregar = new JButton("Agregar");
         botonesAgregar.put(producto, btnAgregar);
 
-        panel.add(imagen, BorderLayout.NORTH);
+        panel.add(imagenLabel, BorderLayout.NORTH);
         panel.add(descripcion, BorderLayout.CENTER);
         panel.add(btnAgregar, BorderLayout.SOUTH);
 
         return panel;
+    }
+
+    private String obtenerNombreImagen(String nombreProducto) {
+        switch (nombreProducto.toLowerCase()) {
+            // Hamburguesas
+            case "hamburguesa clásica": return "hamburguesaClasica.png";
+            case "hamburguesa carne": return "hamburguesaCarne.png";
+            case "hamburguesa papas pollo": return "hamburguesaPapasPollo.png";
+            case "hamburguesa pollo": return "hamburguesaPollo.png";
+            case "hamburguesa tocino": return "hamburguesaTocino.png";
+
+            // Combos
+            case "combo clásico": return "comboClasico.png";
+            case "combo nuggets": return "comboNuggets.png";
+            case "combo wrap de pollo": return "comboWrapDePollo.png";
+            case "combo familiar": return "comboFamiliar.png";
+            case "combo ensalada": return "comboEnsalada.png";
+
+            // Buckets
+            case "bucket 5 piezas": return "bucket5Piezas.png";
+            case "bucket alitas": return "bucketAlitas.png";
+            case "bucket vacío": return "bucketVacio.png";
+
+            // Gaseosas
+            case "gaseosa 7up": return "gaseosa7Up.png";
+            case "gaseosa coca cola": return "gaseosaCocaCola.png";
+            case "gaseosa manzana": return "gaseosaManzana.png";
+            case "gaseosa pepsi": return "gaseosaPepsi.png";
+            case "gaseosa quattro": return "gaseosaQuatro.png";
+            case "gaseosa sprite": return "gaseosaSprite.png";
+
+            // Otros productos
+            case "nuggets de pollo": return "nuggetsDePollo.png";
+            case "wrap de pollo": return "wrapDePollo.png";
+            case "alitas picantes": return "alitasPicantes.png";
+            case "alitas bbq": return "alitasBbq.png";
+
+            default: return "default.png"; // En caso de imagen faltante
+        }
     }
 
     public void addAgregarListener(Producto producto, ActionListener listener) {
