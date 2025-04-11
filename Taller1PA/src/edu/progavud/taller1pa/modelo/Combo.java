@@ -9,8 +9,8 @@ public class Combo {
     private static final int costoExtra = 1000; //Costo por añadir cualquier extra
     
     private List<Producto> productosCombo;
-    private boolean esAgrandado;
-    private boolean tieneExtras;
+    private boolean esAgrandado = false;
+    private boolean tieneExtras = false;
     
     protected double precio;
     protected String nombre;
@@ -32,6 +32,8 @@ public class Combo {
     
 
     public Combo() {
+        this.extras = new ArrayList<>();
+        this.productosCombo = new ArrayList<>();
     }
     
     public void agrandarProducto(int costoAgrandar){
