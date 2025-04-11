@@ -6,10 +6,14 @@ import java.util.ArrayList;
 public class Bucket extends Producto {
     
     private ArrayList<Producto> piezas;
+    protected double precio;
+    protected String nombre;
+    protected String descripcion;
+    protected int cantidad;
+    protected double valorPuntos; //valor en puntos que otorga, de acuerdo a su precio
+    protected TipoProducto tipo; 
 
-    public Bucket(int precio, int cantidad, String nombre, String descripcion, TipoProducto tipo, int valorPuntos) {
-        super(precio, cantidad, nombre, descripcion, tipo, valorPuntos);
-    }
+
 
     public Bucket() {
     }
