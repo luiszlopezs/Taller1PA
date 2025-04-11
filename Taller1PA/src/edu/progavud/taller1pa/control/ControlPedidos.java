@@ -1,8 +1,8 @@
 
 package edu.progavud.taller1pa.control;
 
-import edu.progavud.taller1pa.modelo.Pedido;
-import edu.progavud.taller1pa.modelo.Producto;
+import edu.progavud.taller1pa.modelo.*;
+
 
 public class ControlPedidos {
     private Pedido pedidoActual;
