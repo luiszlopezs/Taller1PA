@@ -4,6 +4,10 @@
  */
 package edu.progavud.taller1pa.control;
 
-public class ControlCliente {
+/**
+ *
+ * @author sangr
+ */
+public class ControlBucket {
     
 }

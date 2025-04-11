@@ -1,13 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package edu.progavud.taller1pa.control;
 
-/**
- *
- * @author sangr
- */
+import edu.progavud.taller1pa.modelo.*;
+
+
 public class ControlPedidos {
+    private Pedido pedidoActual;
+    
+
+    public ControlPedidos(Pedido pedidoActual) {
+        this.pedidoActual = pedidoActual;
+    }
+    
+    public void agregarProductos(){
+        pedidoActual.añadirProducto();
+    }
+    
     
 }
