@@ -21,13 +21,6 @@ public class Bucket extends Producto {
         this.precio += piezas.getPrecio();
     }
     
-    public void calcularPrecioTotal(){ //Método que calcula el precio de pedido, accediendo al precio de cada producto y multiplicándolo por la cantidad
-        double precioTotal = 0;
-        for(Producto pieza: piezas){
-            precioTotal += (pieza.getPrecio()* pieza.getCantidad());
-        }
-        this.precio = precioTotal;
-    }
 
     public ArrayList<Producto> getPiezas() {
         return piezas;

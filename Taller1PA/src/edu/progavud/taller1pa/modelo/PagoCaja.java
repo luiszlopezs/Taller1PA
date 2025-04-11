@@ -12,12 +12,7 @@ public class PagoCaja extends Pago {
     
     
     @Override
-    public void pedidoPago(){
-         //es para sobreescribir el metodo abstracto
-    }
-    
-        
-    public void pedidoPago(int precio){
+    public void pedidoPago(){  //actualizacion pedido pago
         p.getProductos();
         p.calcularPrecioTotal();
         
