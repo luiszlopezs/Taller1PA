@@ -12,13 +12,14 @@ import java.util.ArrayList;
  */
 public class Pedido {
     
-    private String nombre;
     private String tipoPedido;
     private ArrayList<Producto> productos;
-    private int sumaPuntos;
+    private double sumaPuntos;
+    double precioTotal = 0;
+    private Bucket bucket;
 
-    public Pedido(String nombre, String tipoPedido, ArrayList<Producto> productos, int sumaPuntos) {
-        this.nombre = nombre;
+    public Pedido( String tipoPedido, ArrayList<Producto> productos, int sumaPuntos) {
+
         this.tipoPedido = tipoPedido;
         this.productos = productos;
         this.sumaPuntos = sumaPuntos;
@@ -28,16 +29,30 @@ public class Pedido {
     }
     
     public double calcularPrecioTotal(){
-        double precioTotal = 0;
+        
         for(Producto prod: this.productos){
             precioTotal += (prod.getPrecio()*prod.getCantidad());
             
         }
         return precioTotal;
     }
+    ////////
+    public void calcularPrecioBucket(){ //Método que calcula el precio del bucket, accediendo al precio de cada producto y multiplicándolo por la cantidad
+        for(Producto pieza: bucket.getPiezas()){
+            precioTotal += (pieza.getPrecio()* pieza.getCantidad());
+        }
+        this.precioTotal = precioTotal;
+    }
     
-    public int sumarPuntos(){ // recorre la lista de productos y suma los puntos acumulados
-        sumaPuntos = 0;
+    public double calcularPuntosBucket(){ // metodo que calcula solo la suma de puntos del bucket para que al momento de que se calculen todos los puntos no haya error 
+        for(Producto pieza: bucket.getPiezas()){
+            sumaPuntos += (pieza.getValorPuntos()* pieza.getCantidad());
+        }
+        return sumaPuntos;
+    }
+    
+    public double calcularPuntosTotales(){ // recorre la lista de productos y suma los puntos acumulados
+        ///// quite sumapuntos = 0
         for (Producto producto : productos) {
             sumaPuntos += producto.getValorPuntos();
         }
@@ -46,14 +61,6 @@ public class Pedido {
     
     public void anadirProducto(Producto producto){ // Metodo para añadir productos al pedido
         productos.add(producto);
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public String getTipoPedido() {
@@ -74,7 +81,7 @@ public class Pedido {
     }
 
 
-    public int getSumaPuntos() {
+    public double getSumaPuntos() {
         return sumaPuntos;
     }
 

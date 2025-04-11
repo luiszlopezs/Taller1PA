@@ -9,25 +9,22 @@ public class Producto {
     protected String nombre;
     protected String descripcion;
     protected int cantidad;
-    protected String categoria; // Alternativas del cliente para ordenar (hamburguesa,bucket,wraps,alitas...)
-    protected int valorPuntos; //valor en puntos que otorga, de acuerdo a su precio
+    protected double valorPuntos; //valor en puntos que otorga, de acuerdo a su precio
+    protected TipoProducto tipo; //alternativas del cliente para ordenar
 
 
-    public Producto(double precio, int cantidad, String nombre, String descripcion, String categoria, int valorPuntos) {
+    public Producto(double precio, int cantidad, String nombre, String descripcion, TipoProducto tipo, double valorPuntos) {
         this.precio = precio;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.categoria = categoria;
+        this.tipo = tipo;
         this.valorPuntos = valorPuntos;
     }
 
     public Producto() {
     }
     
-    
-    public boolean esDeLaCategoria(String categoria) {
-        return this.categoria.equalsIgnoreCase(categoria);
-    }
+   
 
     public double getPrecio() {
         return precio;
@@ -61,27 +58,20 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public int getValorPuntos() {
+    public double getValorPuntos() {
         return valorPuntos;
     }
 
-    public void setValorPuntos(int valorPuntos) {
+    public void setValorPuntos(double valorPuntos) {
         this.valorPuntos = valorPuntos;
     }
 
-    public String getCategoría() {
-        return categoria;
-    }
 
-    public void setCategoría(String categoría) {
-        this.categoria = categoría;
+    public void calcularValorPuntos(){
+        this.valorPuntos = (this.precio*this.cantidad)/100;
     }
 
 
-
-
-    
-    
     
     
 }
