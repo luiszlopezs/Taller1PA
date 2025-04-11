@@ -4,6 +4,8 @@
  */
 package edu.progavud.taller1pa.modelo;
 
+import java.util.Random;
+
 /**
  *
  * @author sangr
@@ -16,12 +18,15 @@ public abstract class Pago {
     protected Pedido p;
     protected Cliente c;
     protected int cedula;
+    
+    protected int turno;
 
-    public Pago(String medioDePago, Pedido p, Cliente c, int cedula) {
+    public Pago(String medioDePago, Pedido p, Cliente c, int cedula, int turno) {
         this.medioDePago = medioDePago;
         this.p = p;
         this.c = c;
         this.cedula = cedula;
+        this.turno = turno;
     }
 
     public Pago() {
@@ -51,6 +56,13 @@ public abstract class Pago {
         return precioConDto;
         
     }
+    
+    public int darTurno(int turno){
+        this.turno = (int) (Math.random()*100)+1;
+        return this.turno;
+    }
+    
+    
     
     public void asignarPuntos(int cedula){
         c.setPuntos(p.calcularPuntosTotales());
