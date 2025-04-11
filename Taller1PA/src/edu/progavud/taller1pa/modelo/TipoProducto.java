@@ -9,5 +9,5 @@ package edu.progavud.taller1pa.modelo;
  * @author hailen
  */
 public enum TipoProducto {
-    alita,hamburuesa,gaseosa,wrap,nugget
+    prodInd, prodCombo, prodBucket
 }
