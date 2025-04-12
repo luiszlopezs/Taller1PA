@@ -14,7 +14,6 @@ import edu.progavud.taller1pa.modelo.Producto;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.UUID;
 
@@ -61,7 +60,7 @@ public class FacturaView extends JFrame {
         lblTotal = new JLabel("Total pagado: $" + total);
         lblTotal.setFont(new Font("Arial", Font.BOLD, 16));
 
-        // Turno generado
+        // Turno generado (simulado con UUID acortado)
         String turno = UUID.randomUUID().toString().substring(0, 6).toUpperCase();
         lblTurno = new JLabel("Turno asignado: " + turno);
         lblTurno.setFont(new Font("Arial", Font.BOLD, 18));
@@ -81,7 +80,8 @@ public class FacturaView extends JFrame {
         add(panel);
     }
 
-    public void addVolverInicioListener(ActionListener listener) {
-        btnVolverInicio.addActionListener(listener);
+    // Método para que el controlador acceda al botón
+    public JButton getBtnVolverInicio() {
+        return btnVolverInicio;
     }
 }
