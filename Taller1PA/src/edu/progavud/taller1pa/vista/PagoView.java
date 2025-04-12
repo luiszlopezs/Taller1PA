@@ -11,7 +11,6 @@ package edu.progavud.taller1pa.vista;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 
 public class PagoView extends JFrame {
 
@@ -24,7 +23,6 @@ public class PagoView extends JFrame {
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-
         initComponents();
     }
 
@@ -47,23 +45,16 @@ public class PagoView extends JFrame {
         add(panel);
     }
 
-    // Métodos para conectar con el controlador
-    public void addDatafonoListener(ActionListener listener) {
-        btnDatafono.addActionListener(listener);
+    // Getters para que el controlador acceda a los botones
+    public JButton getBtnDatafono() {
+        return btnDatafono;
     }
 
-    public void addCajaListener(ActionListener listener) {
-        btnCaja.addActionListener(listener);
+    public JButton getBtnCaja() {
+        return btnCaja;
     }
 
-    public void addPuntosListener(ActionListener listener) {
-        btnPuntos.addActionListener(listener);
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            PagoView vista = new PagoView();
-            vista.setVisible(true);
-        });
+    public JButton getBtnPuntos() {
+        return btnPuntos;
     }
 }

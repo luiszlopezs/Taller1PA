@@ -14,7 +14,6 @@ import edu.progavud.taller1pa.modelo.Producto;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.util.List;
 
 public class ResumenPedidoView extends JFrame {
@@ -29,7 +28,6 @@ public class ResumenPedidoView extends JFrame {
         setSize(700, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-
         initComponents(productos);
     }
 
@@ -56,6 +54,7 @@ public class ResumenPedidoView extends JFrame {
 
         lblTotal = new JLabel("Total a pagar: $" + total);
         lblTotal.setFont(new Font("Arial", Font.BOLD, 16));
+
         btnContinuarPago = new JButton("Continuar a Pago");
 
         JPanel panelInferior = new JPanel(new BorderLayout());
@@ -68,7 +67,8 @@ public class ResumenPedidoView extends JFrame {
         add(panel);
     }
 
-    public void addContinuarPagoListener(ActionListener listener) {
-        btnContinuarPago.addActionListener(listener);
+    // Getter para que el controlador acceda al botón
+    public JButton getBtnContinuarPago() {
+        return btnContinuarPago;
     }
 }

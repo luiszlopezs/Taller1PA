@@ -11,6 +11,7 @@ package edu.progavud.taller1pa.vista;
 
 import javax.swing.*;
 import java.awt.event.*;
+import java.awt.*;
 
 public class InactividadManager {
 

@@ -11,25 +11,23 @@ package edu.progavud.taller1pa.vista;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.util.HashMap;
 import java.util.Map;
 
 public class CategoriaView extends JFrame {
 
-    private Map<String, JButton> botonesCategoria;
+    private final Map<String, JButton> botonesCategoria;
 
     public CategoriaView() {
         setTitle("Selecciona una Categoría");
         setSize(600, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        botonesCategoria = new HashMap<>();
         initComponents();
     }
 
     private void initComponents() {
-        botonesCategoria = new HashMap<>();
-
         JPanel panel = new JPanel(new GridLayout(2, 3, 15, 15));
         panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
@@ -45,9 +43,8 @@ public class CategoriaView extends JFrame {
         add(panel);
     }
 
-    public void addCategoriaListener(String categoria, ActionListener listener) {
-        if (botonesCategoria.containsKey(categoria)) {
-            botonesCategoria.get(categoria).addActionListener(listener);
-        }
+    // Permite al controlador acceder a los botones
+    public Map<String, JButton> getBotonesCategoria() {
+        return botonesCategoria;
     }
 }
