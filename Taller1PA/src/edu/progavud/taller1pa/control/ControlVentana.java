@@ -15,23 +15,32 @@ public class ControlVentana implements ActionListener {
     public ControlVentana(ControlPrincipal cPrin){//Solo recibe el control principal
         this.cPrin = cPrin;//Guardar el contorl prinicpal
         //Se crean los controles de la vista, reciben el param this
-        vistaPrincipal = new MainView(this);
+        vistaPrincipal = new MainView();
+        configurarMainView();
+        vistaPrincipal.setVisible(true);
         //this.vistaCategorias = vistaCategorias;
     }
+    
+    private void configurarMainView(){
+        vistaPrincipal.getBtnCatalogo();
+        vistaPrincipal.getBtnVerPedidos();
+        vistaPrincipal.getBtnSalir();
+    }
+    
 
     @Override
     public void actionPerformed(ActionEvent e){ //ActionPerformed para elegir si el pedido es para llevar o para la mesa
         String comando = e.getActionCommand();
         
         switch(comando){
-            case "Para la mesa":
+            case "🛍️ Ver Catálogo de Productos":
                 vistaPrincipal.dispose();
                 //vistaCategorias.setVisible(true);
-            case "Para llevar":
+            case "📦 Ver Pedidos":
                 vistaPrincipal.mostrarMensajeEnDesarrollo();
                 
-            case "Seleccionar categoria":
-                //vistaCategorias.dispose();
+            case "❌ Salir":
+                vistaPrincipal.dispose();
                 
         }
         

@@ -47,8 +47,6 @@ public class ControlProductos {
         productos.add(new Producto(1300.0, 0, "Alitas crispy", "Alitas de pollo crujiente", prodInd, 1.3));
         productos.add(new Producto(1300.0, 0, "Alitas BBQ", "Alitas de pollo sabor a BBQ", prodInd, 1.3));
 
-        productos.add(new Producto(35000.0, 0, "Nuggets", "Nuggets de pollo", prodCombo, 35));
-
     }
 
     public List<Producto> getProductos() {

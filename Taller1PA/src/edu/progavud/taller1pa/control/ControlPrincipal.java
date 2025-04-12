@@ -1,6 +1,6 @@
 
 package edu.progavud.taller1pa.control;
-
+import edu.progavud.taller1pa.modelo.*;
 
 public class ControlPrincipal {
     private ControlPedidos cPedido;
@@ -9,12 +9,12 @@ public class ControlPrincipal {
     private ControlVentana cVentana;
     private ControlProductos cProductos;
 
-    public ControlPrincipal(ControlPedidos cPedido, ControlPagos cPagos, ControlCliente cCliente, ControlVentana cVentana, ControlProductos cProductos) {
-        this.cPedido = cPedido;
-        this.cPagos = cPagos;
-        this.cCliente = cCliente;
-        this.cVentana = cVentana;
-        this.cProductos = cProductos;
+    public ControlPrincipal() {
+        cVentana = new ControlVentana(this);
+        cPagos = new ControlPagos(this);
+        cProductos = new ControlProductos(this);
+        cPedido = new ControlPedidos(this);
+        
     }
     
     

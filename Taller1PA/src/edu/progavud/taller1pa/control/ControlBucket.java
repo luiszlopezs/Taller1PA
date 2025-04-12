@@ -9,9 +9,10 @@ import java.util.ArrayList;
 public class ControlBucket {
     private ArrayList<Bucket> buckets;
     private Bucket bucket;
+    private ControlPrincipal cprin;
     
-    public ControlBucket(ControlPrincipal cp) {
-        ControlPrincipal cprincipal = cp;
+    public ControlBucket(ControlPrincipal cprin) {
+        this.cprin = cprin;
         buckets = new ArrayList<>();
     }
 

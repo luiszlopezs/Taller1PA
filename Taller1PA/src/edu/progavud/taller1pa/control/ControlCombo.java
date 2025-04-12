@@ -11,14 +11,13 @@ import java.util.List;
 
 public class ControlCombo {
 
-    ControlPrincipal cPrinc;
+    ControlPrincipal cPrin;
     ControlProductos cProd;
     private List<Combo> combos;
     
 
-    public ControlCombo(ControlPrincipal cPrinc, ControlProductos cProd) {
-        this.cPrinc = cPrinc;
-        this.cProd = cProd;
+    public ControlCombo(ControlPrincipal cPrin) {
+        this.cPrin = cPrin;
         combos = new ArrayList<>();
 
     }
@@ -30,9 +29,9 @@ public class ControlCombo {
         combos.add(nuevoCombo);
     }
 
-    public void crearCombosIniciales(ControlProductos ctrlProductos) {
+    public void crearCombosIniciales(ControlProductos cProd) {
         // Lista de productos precargados
-        List<Producto> productos = ctrlProductos.getProductos();
+        List<Producto> productos = cProd.getProductos();
 
         // Combo 1: Hamburguesa + Coca Cola
         List<Producto> combo1 = List.of(productos.get(0), productos.get(6));
@@ -55,8 +54,8 @@ public class ControlCombo {
         crearCombo(combo5, 30000.0, "Combo Wrap + Quatro", "Wrap Roast Beef + Quatro", 0, TipoProducto.prodCombo);
 
         // Combo 6: Nuggets + Pepsi
-        List<Producto> combo6 = List.of(productos.get(25), productos.get(9));
-        crearCombo(combo6, 40000.0, "Combo Nuggets + Pepsi", "Nuggets + Pepsi", 0, TipoProducto.prodCombo);
+        List<Producto> combo6 = List.of(productos.get(4), productos.get(7));
+        crearCombo(combo6, 40000.0, "Combo King Tocineta + SevenUP", "Hamburguesa KING + SevenUP", 0, TipoProducto.prodCombo);
     }
     
     public double calcularPrecioCombos(){

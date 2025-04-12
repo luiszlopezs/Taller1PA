@@ -32,46 +32,16 @@ public abstract class Pago {
     public Pago() {
     }
 
-    
-    
-    
-    public double aplicarDescuentoIndigena(){
-        
-        precioConDto = (p.calcularPrecioTotal() - p.calcularPrecioTotal()*0.08);
-        
-        return precioConDto;
-    };
-    
-    public double aplicarDescuentoMayorDeEdad(){
-        
-        precioConDto = (p.calcularPrecioTotal() - p.calcularPrecioTotal()*0.1);
-        
-        return precioConDto;
-    };
-    
-    public double aplicarDescuentoDoble(){
-        
-        precioConDto = (p.calcularPrecioTotal() - p.calcularPrecioTotal()*0.18);
-        
-        return precioConDto;
-        
-    }
-    
     public int darTurno(int turno){
         this.turno = (int) (Math.random()*100)+1;
         return this.turno;
     }
-    
-    
-    
+   
     public void asignarPuntos(int cedula){
         c.setPuntos(p.calcularPuntosTotales());
     }
         
     //metodo para pagar, se hereda a las clase pago
     public abstract void pedidoPago();
-    
-    
-    
     
 }

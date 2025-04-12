@@ -8,7 +8,7 @@ package edu.progavud.taller1pa.modelo;
  *
  * @author hailen
  */
-public class PagoCaja extends Pago {
+public class PagoCaja extends Pago  {
     
     
     @Override
