@@ -1,30 +1,30 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package edu.progavud.taller1pa.control;
 
 import java.util.ArrayList;
-
 import edu.progavud.taller1pa.modelo.*;
+import static edu.progavud.taller1pa.modelo.TipoProducto.prodCombo;
 import java.util.List;
 
-/**
- *
- * @author hailen
- */
 public class ControlCombo {
 
     ControlPrincipal cPrinc;
     ControlProductos cProd;
     private List<Combo> combos;
+    
 
     public ControlCombo(ControlPrincipal cPrinc, ControlProductos cProd) {
         this.cPrinc = cPrinc;
         this.cProd = cProd;
         combos = new ArrayList<>();
-        new Combo();
+
     }
 
     public void crearCombo(List<Producto> productosSeleccionados, double precio, String nombreCombo, String descripcion, int cantidad, TipoProducto tipo) {
         double valorPuntos = precio / 100; 
-
         Combo nuevoCombo = new Combo(productosSeleccionados, precio, nombreCombo, descripcion, cantidad, valorPuntos, tipo);
 
         combos.add(nuevoCombo);
@@ -58,15 +58,18 @@ public class ControlCombo {
         List<Producto> combo6 = List.of(productos.get(25), productos.get(9));
         crearCombo(combo6, 40000.0, "Combo Nuggets + Pepsi", "Nuggets + Pepsi", 0, TipoProducto.prodCombo);
     }
-
-    public List<Combo> getCombos() {
-        return combos;
-    }
-
-    public void setCombos(List<Combo> combos) {
-        this.combos = combos;
-    }
+    
+    public double calcularPrecioCombos(){
+        double precioCombos = 0;
+        for(Combo combo : combos){
+            precioCombos += combo.getPrecio()*combo.getCantidad();
+        }return precioCombos;
+    } 
     
     
+    
+    
+
+
 
 }
