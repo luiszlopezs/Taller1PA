@@ -12,31 +12,62 @@ import java.util.ArrayList;
  */
 public class Pedido {
     
-    private String tipoPedido;
     private ArrayList<Producto> productos;
+    private ArrayList<Bucket> buckets;
+    private ArrayList<Combo> combos;
     private double sumaPuntos;
-    double precioTotal = 0;
-    private Bucket bucket;
+    double precioProductos = 0;
+    double precioBuckets = 0;
+    double precioCombos= 0;
+    
 
-    public Pedido( String tipoPedido, ArrayList<Producto> productos, int sumaPuntos) {
+ 
 
-        this.tipoPedido = tipoPedido;
+    public Pedido(ArrayList<Producto> productos, ArrayList<Bucket> buckets, ArrayList<Combo> combos, double sumaPuntos) {
         this.productos = productos;
+        this.buckets = buckets;
+        this.combos = combos;
         this.sumaPuntos = sumaPuntos;
+        
     }
+    
 
     public Pedido() {
     }
     
-    public double calcularPrecioTotal(){
+    public double calcularPrecioProductos(){
         
         for(Producto prod: this.productos){
-            precioTotal += (prod.getPrecio()*prod.getCantidad());
+            precioProductos += (prod.getPrecio()*prod.getCantidad());
             
         }
-        return precioTotal;
+        return precioProductos;
     }
-    ////////
+    
+
+
+    public ArrayList<Bucket> getBuckets() {
+        return buckets;
+    }
+
+    public void setBuckets(ArrayList<Bucket> buckets) {
+        this.buckets = buckets;
+    }
+
+    public ArrayList<Combo> getCombos() {
+        return combos;
+    }
+
+    public void setCombos(ArrayList<Combo> combos) {
+        this.combos = combos;
+    }
+
+  
+    
+    
+    
+    /*
+    
     public void calcularPrecioBucket(){ //Método que calcula el precio del bucket, accediendo al precio de cada producto y multiplicándolo por la cantidad
         for(Producto pieza: bucket.getPiezas()){
             precioTotal += (pieza.getPrecio()* pieza.getCantidad());
@@ -50,8 +81,10 @@ public class Pedido {
         }
         return sumaPuntos;
     }
+    */
     
-    public double calcularPuntosTotales(){ // recorre la lista de productos y suma los puntos acumulados
+    
+    public double calcularPuntos(){ // recorre la lista de productos y suma los puntos acumulados
         ///// quite sumapuntos = 0
         for (Producto producto : productos) {
             sumaPuntos += producto.getValorPuntos();
@@ -61,32 +94,6 @@ public class Pedido {
     
     public void anadirProducto(Producto producto){ // Metodo para añadir productos al pedido
         productos.add(producto);
-    }
-
-    public String getTipoPedido() {
-        return tipoPedido;
-    }
-
-    public void setTipoPedido(String tipoPedido) {
-        this.tipoPedido = tipoPedido;
-    }
-
-
-    public ArrayList<Producto> getProductos() {
-        return productos;
-    }
-
-    public void setProductos(ArrayList<Producto> productos) {
-        this.productos = productos;
-    }
-
-
-    public double getSumaPuntos() {
-        return sumaPuntos;
-    }
-
-    public void setSumaPuntos(int sumaPuntos) {
-        this.sumaPuntos = sumaPuntos;
     }
 
     

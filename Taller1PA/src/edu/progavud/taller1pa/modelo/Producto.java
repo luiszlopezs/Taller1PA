@@ -1,4 +1,3 @@
-
 package edu.progavud.taller1pa.modelo;
 
 import java.util.List;
@@ -70,8 +69,13 @@ public class Producto {
     public void calcularValorPuntos(){
         this.valorPuntos = (this.precio*this.cantidad)/100;
     }
+    
+    public int aumentarCantidadProd(){
+        this.cantidad++;
+        return cantidad;
+    }
 
 
     
     
-}
+} 
