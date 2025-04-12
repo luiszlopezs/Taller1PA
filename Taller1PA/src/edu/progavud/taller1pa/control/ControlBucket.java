@@ -4,7 +4,7 @@
  */
 package edu.progavud.taller1pa.control;
 
-<<<<<<< HEAD
+
 import edu.progavud.taller1pa.modelo.Bucket;
 import edu.progavud.taller1pa.modelo.TipoProducto;
 import java.util.ArrayList;
@@ -28,12 +28,5 @@ public class ControlBucket {
     }
     
 
-=======
-/**
- *
- * @author sangr
- */
-public class ControlBucket {
-    
->>>>>>> ca0331918c4c2d549f0eedb87bb716bf5e1f069d
+
 }

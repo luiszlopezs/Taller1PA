@@ -4,7 +4,7 @@
  */
 package edu.progavud.taller1pa.control;
 
-<<<<<<< HEAD
+
 import java.util.ArrayList;
 
 import edu.progavud.taller1pa.modelo.*;
@@ -68,12 +68,6 @@ public class ControlCombo {
     
     
 
-=======
-/**
- *
- * @author sangr
- */
-public class ControlCombo {
-    
->>>>>>> ca0331918c4c2d549f0eedb87bb716bf5e1f069d
+
+
 }
