@@ -11,7 +11,6 @@ package edu.progavud.taller1pa.vista;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 
 public class CedulaView extends JFrame {
 
@@ -52,6 +51,7 @@ public class CedulaView extends JFrame {
         add(panel);
     }
 
+    // Métodos para acceder desde el controlador
     public String getCedulaIngresada() {
         return txtCedula.getText().trim();
     }
@@ -61,11 +61,11 @@ public class CedulaView extends JFrame {
         btnPagarConPuntos.setEnabled(true);
     }
 
-    public void addConsultarListener(ActionListener listener) {
-        btnConsultar.addActionListener(listener);
+    public JButton getBtnConsultar() {
+        return btnConsultar;
     }
 
-    public void addPagarConPuntosListener(ActionListener listener) {
-        btnPagarConPuntos.addActionListener(listener);
+    public JButton getBtnPagarConPuntos() {
+        return btnPagarConPuntos;
     }
 }

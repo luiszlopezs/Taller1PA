@@ -11,51 +11,50 @@ package edu.progavud.taller1pa.vista;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 
-public class PagoView extends JFrame {
+public class MainView extends JFrame {
 
-    private JButton btnDatafono;
-    private JButton btnCaja;
-    private JButton btnPuntos;
+    private JButton btnCatalogo;
+    private JButton btnVerPedidos;
+    private JButton btnSalir;
 
-    public PagoView() {
-        setTitle("Selecciona Método de Pago");
-        setSize(400, 300);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    public MainView() {
+        setTitle("Sistema de Pedidos - KFC");
+        setSize(500, 400);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-
         initComponents();
     }
 
     private void initComponents() {
-        JPanel panel = new JPanel(new GridLayout(4, 1, 10, 10));
-        panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
+        JPanel panel = new JPanel(new GridLayout(4, 1, 15, 15));
+        panel.setBorder(BorderFactory.createEmptyBorder(40, 40, 40, 40));
 
-        JLabel lblTitulo = new JLabel("¿Cómo deseas pagar?", JLabel.CENTER);
-        lblTitulo.setFont(new Font("Arial", Font.BOLD, 18));
+        JLabel titulo = new JLabel("Bienvenido al Sistema de Pedidos", JLabel.CENTER);
+        titulo.setFont(new Font("Arial", Font.BOLD, 20));
 
-        btnDatafono = new JButton("💳 Tarjeta (Datafono)");
-        btnCaja = new JButton("🧾 Pagar en Caja");
-        btnPuntos = new JButton("🪙 Pagar con Puntos");
+        btnCatalogo = new JButton("🛍️ Ver Catálogo de Productos");
+        btnVerPedidos = new JButton("📦 Ver Pedidos");
+        btnSalir = new JButton("❌ Salir");
 
-        panel.add(lblTitulo);
-        panel.add(btnDatafono);
-        panel.add(btnCaja);
-        panel.add(btnPuntos);
+        panel.add(titulo);
+        panel.add(btnCatalogo);
+        panel.add(btnVerPedidos);
+        panel.add(btnSalir);
 
         add(panel);
     }
 
-    public void addDatafonoListener(ActionListener listener) {
-        btnDatafono.addActionListener(listener);
+    // Métodos para que el controlador acceda a los botones
+    public JButton getBtnCatalogo() {
+        return btnCatalogo;
     }
 
-    public void addCajaListener(ActionListener listener) {
-        btnCaja.addActionListener(listener);
+    public JButton getBtnVerPedidos() {
+        return btnVerPedidos;
     }
 
-    public void addPuntosListener(ActionListener listener) {
-        btnPuntos.addActionListener(listener);
+    public JButton getBtnSalir() {
+        return btnSalir;
     }
 }
