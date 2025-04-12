@@ -75,6 +75,15 @@ public class ControlProductos {
         //}
        // return productosFiltrados;
     //}
+<<<<<<< HEAD
 
     
 } 
+=======
+      
+    public void calcularValorPuntos(){
+        
+    }
+    
+}
+>>>>>>> ca0331918c4c2d549f0eedb87bb716bf5e1f069d

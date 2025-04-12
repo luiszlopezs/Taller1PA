@@ -1,13 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package edu.progavud.taller1pa.control;
 
-/**
- *
- * @author sangr
- */
+
 public class ControlPrincipal {
+    private ControlPedidos cPedido;
+    private ControlPagos cPagos;
+    private ControlCliente cCliente;
+    private ControlVentana cVentana;
+    private ControlProductos cProductos;
+
+    public ControlPrincipal(ControlPedidos cPedido, ControlPagos cPagos, ControlCliente cCliente, ControlVentana cVentana, ControlProductos cProductos) {
+        this.cPedido = cPedido;
+        this.cPagos = cPagos;
+        this.cCliente = cCliente;
+        this.cVentana = cVentana;
+        this.cProductos = cProductos;
+    }
+    
     
 }
