@@ -4,32 +4,35 @@
  */
 package edu.progavud.taller1pa.modelo;
 
+import java.util.Random;
+
 /**
  *
- * @author hailen
+ * @author sangr
  */
-public class Pago {
+public abstract class Pago {
     
-    private String medioDePago;
-    private boolean estaPago;
-    private double precioConDto;
-    private Pedido p;
-    private Cliente c;
+    protected String medioDePago;
+    protected boolean estaPago = false;
+    protected double precioConDto;
+    protected Pedido p;
+    protected Cliente c;
+    protected int cedula;
     
-    private int numTarjeta;
-    private int claveTarjeta;
-    
-    private int cedula;
+    protected int turno;
 
-    public Pago(String medioDePago, boolean estaPago, Pedido p, Cliente c, int cedula) {
+    public Pago(String medioDePago, Pedido p, Cliente c, int cedula, int turno) {
         this.medioDePago = medioDePago;
-        this.estaPago = estaPago;
         this.p = p;
         this.c = c;
         this.cedula = cedula;
+        this.turno = turno;
     }
 
+    public Pago() {
+    }
 
+    
     
     
     public double aplicarDescuentoIndigena(){
@@ -53,28 +56,22 @@ public class Pago {
         return precioConDto;
         
     }
-    //metodo para pagar con el datafono
-    public boolean pedidoPagoDatafono(int numTarjeta, int claveTarjeta){
-        estaPago = true;
-        return estaPago;
+    
+    public int darTurno(int turno){
+        this.turno = (int) (Math.random()*100)+1;
+        return this.turno;
     }
+    
+    
     
     public void asignarPuntos(int cedula){
-        c.setPuntos(p.sumarPuntos());
+        c.setPuntos(p.calcularPuntosTotales());
     }
-    // metodo para pagar con puntos, resta los puntos avtuales de la persona con los del pedido
-    public boolean pagarPedidoConPuntos(int puntos){
-        int puntosActualizados = c.getPuntos() - p.sumarPuntos();
-        c.setPuntos(puntosActualizados);
-        estaPago = true;
-        return estaPago;
-    }
-    
-    public void pagarEnCaja(int precio){
-        p.getProductos();
-        p.calcularPrecioTotal();
         
-    }
+    //metodo para pagar, se hereda a las clase pago
+    public abstract void pedidoPago();
+    
+    
     
     
 }

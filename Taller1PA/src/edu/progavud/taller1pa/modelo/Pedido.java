@@ -1,32 +1,91 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package edu.progavud.taller1pa.modelo;
+
 import java.util.ArrayList;
 
+/**
+ *
+ * @author hailen
+ */
 public class Pedido {
-    private String nombre;
-    private String tipoPedido; //Para llevar o para la mesa
+    
     private ArrayList<Producto> productos;
-    private int sumaPuntos;
+    private ArrayList<Bucket> buckets;
+    private ArrayList<Combo> combos;
+    private double sumaPuntos;
+    double precioProductos = 0;
+    double precioBuckets = 0;
+    double precioCombos= 0;
+    
 
-    public Pedido(String nombre, String tipoPedido, ArrayList<Producto> productos) {
-        this.nombre = nombre;
-        this.tipoPedido = tipoPedido;
+ 
+
+    public Pedido(ArrayList<Producto> productos, ArrayList<Bucket> buckets, ArrayList<Combo> combos, double sumaPuntos) {
         this.productos = productos;
+        this.buckets = buckets;
+        this.combos = combos;
+        this.sumaPuntos = sumaPuntos;
+        
     }
-   
+    
+
     public Pedido() {
     }
     
-    public double calcularPrecioTotal(){ //Método que calcula el precio de pedido, accediendo al precio de cada producto y multiplicándolo por la cantidad
-        double precioTotal = 0;
+    public double calcularPrecioProductos(){
+        
         for(Producto prod: this.productos){
-            precioTotal += (prod.getPrecio()* prod.getCantidad());
+            precioProductos += (prod.getPrecio()*prod.getCantidad());
+            
         }
-        return precioTotal;
+        return precioProductos;
     }
     
-    public int sumarPuntos(){ // recorre la lista de productos y suma los puntos acumulados
-        sumaPuntos = 0;
+
+
+    public ArrayList<Bucket> getBuckets() {
+        return buckets;
+    }
+
+    public void setBuckets(ArrayList<Bucket> buckets) {
+        this.buckets = buckets;
+    }
+
+    public ArrayList<Combo> getCombos() {
+        return combos;
+    }
+
+    public void setCombos(ArrayList<Combo> combos) {
+        this.combos = combos;
+    }
+
+  
+    
+    
+    
+    /*
+    
+    public void calcularPrecioBucket(){ //Método que calcula el precio del bucket, accediendo al precio de cada producto y multiplicándolo por la cantidad
+        for(Producto pieza: bucket.getPiezas()){
+            precioTotal += (pieza.getPrecio()* pieza.getCantidad());
+        }
+        this.precioTotal = precioTotal;
+    }
+    
+    public double calcularPuntosBucket(){ // metodo que calcula solo la suma de puntos del bucket para que al momento de que se calculen todos los puntos no haya error 
+        for(Producto pieza: bucket.getPiezas()){
+            sumaPuntos += (pieza.getValorPuntos()* pieza.getCantidad());
+        }
+        return sumaPuntos;
+    }
+    */
+    
+    
+    public double calcularPuntos(){ // recorre la lista de productos y suma los puntos acumulados
+        ///// quite sumapuntos = 0
         for (Producto producto : productos) {
             sumaPuntos += producto.getValorPuntos();
         }
@@ -37,32 +96,6 @@ public class Pedido {
         productos.add(producto);
     }
 
-    public ArrayList<Producto> getProductos() {
-        return productos;
-    }
-
-    public void setProductos(ArrayList<Producto> productos) {
-        this.productos = productos;
-    }
-    
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getTipoPedido() {
-        return tipoPedido;
-    }
-
-    public void setTipoPedido(String tipoPedido) {
-        this.tipoPedido = tipoPedido;
-    }
-
     
     
-    
- 
 }

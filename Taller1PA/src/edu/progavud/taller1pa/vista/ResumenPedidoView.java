@@ -34,17 +34,14 @@ public class ResumenPedidoView extends JFrame {
     }
 
     private void initComponents(List<Producto> productos) {
-        // Panel principal
         JPanel panel = new JPanel(new BorderLayout(10, 10));
         panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
-        // Tabla
         String[] columnas = {"Producto", "Cantidad", "Precio Unitario", "Subtotal"};
         modeloTabla = new DefaultTableModel(columnas, 0);
         tablaResumen = new JTable(modeloTabla);
         JScrollPane scrollPane = new JScrollPane(tablaResumen);
 
-        // Cargar productos
         double total = 0;
         for (Producto p : productos) {
             double subtotal = p.getPrecio() * p.getCantidad();
@@ -57,7 +54,6 @@ public class ResumenPedidoView extends JFrame {
             });
         }
 
-        // Total y botón
         lblTotal = new JLabel("Total a pagar: $" + total);
         lblTotal.setFont(new Font("Arial", Font.BOLD, 16));
         btnContinuarPago = new JButton("Continuar a Pago");
@@ -66,7 +62,6 @@ public class ResumenPedidoView extends JFrame {
         panelInferior.add(lblTotal, BorderLayout.WEST);
         panelInferior.add(btnContinuarPago, BorderLayout.EAST);
 
-        // Agregar al panel
         panel.add(scrollPane, BorderLayout.CENTER);
         panel.add(panelInferior, BorderLayout.SOUTH);
 
@@ -75,18 +70,5 @@ public class ResumenPedidoView extends JFrame {
 
     public void addContinuarPagoListener(ActionListener listener) {
         btnContinuarPago.addActionListener(listener);
-    }
-
-    public static void main(String[] args) {
-        // Datos de prueba
-        List<Producto> productos = List.of(
-            new Producto(15000, 2, "Hamburguesa Clásica", "Carne 100% res", "Hamburguesas", 15),
-            new Producto(12000, 1, "Wrap de Pollo", "Pollo crocante", "Wraps", 12)
-        );
-
-        SwingUtilities.invokeLater(() -> {
-            ResumenPedidoView vista = new ResumenPedidoView(productos);
-            vista.setVisible(true);
-        });
     }
 }
